@@ -1,2 +1,2 @@
 # FootyScorer
-Football Scoring App Bases on Junior AFL
+Football Scoring App Based on Junior AFL
