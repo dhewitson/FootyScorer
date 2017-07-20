@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 using Foundation;
+using SQLite.Net.Platform.XamarinIOS;
 using UIKit;
 
 namespace FootyScorer.iOS
@@ -14,7 +16,21 @@ namespace FootyScorer.iOS
         {
             global::Xamarin.Forms.Forms.Init();
 
-            LoadApplication(new App());
+            var platform = new SQLitePlatformIOS();
+
+            const string dbName = "gamedb.db3";
+            var path = NSFileManager.DefaultManager.GetUrls(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomain.User)[0].Path;
+            var dbPath = Path.Combine(path, dbName);
+
+            if (!File.Exists(dbPath))
+            {
+                var appDir = NSBundle.MainBundle.ResourcePath;
+                var seedFile = Path.Combine(appDir, dbName);
+                if (File.Exists(seedFile))
+                    File.Copy(seedFile, dbPath);
+            }
+
+            LoadApplication(new App(new SQLite.Net.SQLiteConnection(platform, dbPath, false)));
 
             return base.FinishedLaunching(app, options);
         }

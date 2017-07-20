@@ -1,10 +1,11 @@
 ﻿using Xamarin.Forms;
+using SQLite.Net;
 
 namespace FootyScorer
 {
     public class App : Application
     {
-        public App()
+        public App(SQLiteConnection connection)
         {
             MainPage = new FootyScorerPage();
         }
