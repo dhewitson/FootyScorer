@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:FootyScorerContentPageBase 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ui="clr-namespace:FootyScorer.UI;assembly=FootyScorer"
+    xmlns:local="clr-namespace:FootyScorer.Constants;assembly=FootyScorer"
+    x:Class="FootyScorer.UI.LandingPage">
+    
+	<ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Button Text="Welcome" WidthRequest="120" HeightRequest="40" />
+        </StackLayout>
+	</ContentPage.Content>
+</ui:FootyScorerContentPageBase>

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-
+﻿using System.IO;
 using Foundation;
 using SQLite.Net.Platform.XamarinIOS;
 using UIKit;
@@ -10,11 +6,12 @@ using UIKit;
 namespace FootyScorer.iOS
 {
     [Register("AppDelegate")]
-    public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+    public class AppDelegate : Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
     {
-        public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+        public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
         {
-            global::Xamarin.Forms.Forms.Init();
+            Xamarin.Forms.Forms.Init();
+            UINavigationBar.Appearance.TintColor = UIColor.Black;
 
             var platform = new SQLitePlatformIOS();
 
@@ -32,7 +29,7 @@ namespace FootyScorer.iOS
 
             LoadApplication(new App(new SQLite.Net.SQLiteConnection(platform, dbPath, false)));
 
-            return base.FinishedLaunching(app, options);
+            return base.FinishedLaunching(uiApplication, launchOptions);
         }
     }
 }
