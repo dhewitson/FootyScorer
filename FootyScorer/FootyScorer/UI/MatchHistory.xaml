@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FootyScorer.UI.MatchHistory">
+	<ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Fill" Spacing="5" Padding="0">
+            <Label FontSize="10" Text="Round 7" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+            <Label FontSize="10" Text="Home vs. Pakenham Gold" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+            <Label FontSize="10" Text="89   to   90" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+            <Label FontSize="10" Text="Sun, 28 Jun, 2017" FontAttributes="Italic" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+
+            <Grid Padding="10" RowSpacing="15" ColumnSpacing="5" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="1" Text="G" />
+                <Label Grid.Row="0" Grid.Column="2" Text="B" />
+                <Label Grid.Row="0" Grid.Column="5" Text="G" />
+                <Label Grid.Row="0" Grid.Column="6" Text="B" />
+                
+                <Label Grid.Row="1" Grid.Column="0"  Text="Q1" />
+                <Label Grid.Row="1" Grid.Column="1"  Text="1" />
+                <Label Grid.Row="1" Grid.Column="2"  Text="4" />
+                <Label Grid.Row="1" Grid.Column="3"  Text="10" />
+
+                <Label Grid.Row="1" Grid.Column="5"  Text="1" />
+                <Label Grid.Row="1" Grid.Column="6"  Text="1" />
+                <Label Grid.Row="1" Grid.Column="7"  Text="7" />
+                
+                <Label Grid.Row="2" Grid.Column="0"  Text="Q2" />
+                <Label Grid.Row="2" Grid.Column="1"  Text="1" />
+                <Label Grid.Row="2" Grid.Column="2"  Text="4" />
+                <Label Grid.Row="2" Grid.Column="3"  Text="10" />
+
+                <Label Grid.Row="2" Grid.Column="5"  Text="1" />
+                <Label Grid.Row="2" Grid.Column="6"  Text="1" />
+                <Label Grid.Row="2" Grid.Column="7"  Text="7" />
+                
+                <Label Grid.Row="3" Grid.Column="0"  Text="Q3" />
+                <Label Grid.Row="3" Grid.Column="1"  Text="1" />
+                <Label Grid.Row="3" Grid.Column="2"  Text="4" />
+                <Label Grid.Row="3" Grid.Column="3"  Text="10" />
+
+                <Label Grid.Row="3" Grid.Column="5"  Text="1" />
+                <Label Grid.Row="3" Grid.Column="6"  Text="1" />
+                <Label Grid.Row="3" Grid.Column="7"  Text="7" />
+                
+                <Label Grid.Row="4" Grid.Column="0"  Text="Q4" />
+                <Label Grid.Row="4" Grid.Column="1"  Text="1" />
+                <Label Grid.Row="4" Grid.Column="2"  Text="4" />
+                <Label Grid.Row="4" Grid.Column="3"  Text="10" />
+
+                <Label Grid.Row="4" Grid.Column="5"  Text="1" />
+                <Label Grid.Row="4" Grid.Column="6"  Text="1" />
+                <Label Grid.Row="4" Grid.Column="7"  Text="7" />
+
+                <Label Grid.Row="5" Grid.Column="0"  Text="T" />
+                <Label Grid.Row="5" Grid.Column="1"  Text="1" />
+                <Label Grid.Row="5" Grid.Column="2"  Text="4" />
+                <Label Grid.Row="5" Grid.Column="3"  Text="10" />
+
+                <Label Grid.Row="5" Grid.Column="5"  Text="1" />
+                <Label Grid.Row="5" Grid.Column="6"  Text="1" />
+                <Label Grid.Row="5" Grid.Column="7"  Text="7" />
+               
+                <BoxView Grid.Row="1" Grid.RowSpan="5" Grid.Column="4" HorizontalOptions="Center" VerticalOptions="Fill" WidthRequest="0.5" Color="Black" />
+                
+            </Grid>
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

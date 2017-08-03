@@ -22,7 +22,11 @@ namespace FootyScorer.Droid
 
             base.OnCreate(bundle);
 
+            Plugin.Iconize.Iconize.With(new Plugin.Iconize.Fonts.FontAwesomeModule());
+                  
             global::Xamarin.Forms.Forms.Init(this, bundle);
+
+            FormsPlugin.Iconize.Droid.IconControls.Init(Resource.Id.toolbar, Resource.Id.sliding_tabs);
 
             AppDomain.CurrentDomain.UnhandledException += (sender, e) => {
                 

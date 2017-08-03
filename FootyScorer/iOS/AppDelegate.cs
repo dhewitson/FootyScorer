@@ -11,6 +11,9 @@ namespace FootyScorer.iOS
         public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
         {
             Xamarin.Forms.Forms.Init();
+            Plugin.Iconize.Iconize.With(new Plugin.Iconize.Fonts.FontAwesomeModule());
+            FormsPlugin.Iconize.iOS.IconControls.Init();
+                  
             UINavigationBar.Appearance.TintColor = UIColor.Black;
 
             var platform = new SQLitePlatformIOS();

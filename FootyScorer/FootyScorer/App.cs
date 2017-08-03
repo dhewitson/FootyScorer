@@ -1,6 +1,8 @@
 ﻿using Xamarin.Forms;
 using SQLite.Net;
 using FootyScorer.Data;
+using FootyScorer.UI;
+using FootyScorer.Constants;
 
 namespace FootyScorer
 {
@@ -16,7 +18,7 @@ namespace FootyScorer
         {
             ApplyTheming();
             DataManager = new DataManager(connection);
-            MainPage = new UI.LandingPage();
+            MainPage =  new NavigationPage(new LandingPage()) { BarBackgroundColor = ThemeSettings.ToolbarColor, BarTextColor = ThemeSettings.ToolbarButtonColor };
         }
 
         protected override void OnStart()
@@ -52,10 +54,8 @@ namespace FootyScorer
 					}
 				}
 			};
-
-			Device.OnPlatform(
-			() =>
-			{
+            if (Device.RuntimePlatform == Device.iOS)
+            {
 				buttonStyle.Setters.Add(new Setter
 				{
 					Property = Button.FontSizeProperty,
@@ -67,9 +67,10 @@ namespace FootyScorer
 					Property = VisualElement.HeightRequestProperty,
 					Value = 15
 				});
-			},
-			() =>
-			{
+            }
+
+            if (Device.RuntimePlatform == Device.Android)
+            {
 				buttonStyle.Setters.Add(new Setter
 				{
 					Property = Button.FontSizeProperty,
@@ -80,7 +81,7 @@ namespace FootyScorer
 					Property = VisualElement.HeightRequestProperty,
 					Value = 40
 				});
-			});
+            }
 
 			var labelStyle = new Style(typeof(Label))
 			{

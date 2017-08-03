@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using FootyScorer.Constants;
 using Xamarin.Forms;
 
@@ -10,7 +9,7 @@ namespace FootyScorer.UI
         public LandingPage()
         {
             InitializeComponent();
-
+            Title = StringResource.ApplicationName;
             BackgroundColor = ThemeSettings.DefaultBackgroundColour;
 
             NavigationPage.SetHasNavigationBar(this, true);
@@ -21,11 +20,25 @@ namespace FootyScorer.UI
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
+            GameTapped.Tapped += HandleGameTapped;
+            GameTapped2.Tapped += HandleGameTapped;
+            GameTapped3.Tapped += HandleGameTapped;
+            GameTapped1.Tapped += HandleGameTapped;
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
+            GameTapped.Tapped -= HandleGameTapped;
+            GameTapped1.Tapped -= HandleGameTapped;
+            GameTapped2.Tapped -= HandleGameTapped;
+            GameTapped3.Tapped -= HandleGameTapped;
+        }
+
+        private void HandleGameTapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MatchHistory());
         }
     }
 }
