@@ -26,8 +26,22 @@ namespace FootyScorer.Data
         /// <param name="match">Match.</param>
         public void SaveMatch(MatchViewModel match)
         {
-            _dbManager.SaveScore(match.AwayScore.ToModel());
-            _dbManager.SaveScore(match.HomeScore.ToModel());
+			var awayTeam = _dbManager.GetTeams(t => t.Name == match.AwayTeam && t.CompetitionName == match.CompetitionName).FirstOrDefault();
+
+			if (awayTeam == null)
+				_dbManager.SaveTeam(new Team { CompetitionName = match.CompetitionName, Name = match.AwayTeam, ShortName = match.AwayTeamShort });
+
+
+			var homeTeam = _dbManager.GetTeams(t => t.Name == match.HomeTeam && t.CompetitionName == match.CompetitionName).FirstOrDefault();
+
+			if (awayTeam == null)
+				_dbManager.SaveTeam(new Team { CompetitionName = match.CompetitionName, Name = match.HomeTeam, ShortName = match.HomeTeamShort });
+
+            if (match.AwayScore != null)
+			    _dbManager.SaveScore(match.AwayScore.ToModel());
+
+            if (match.HomeScore != null)
+                _dbManager.SaveScore(match.HomeScore.ToModel());
             _dbManager.SaveMatch(match.ToModel());
         }
 
@@ -102,6 +116,14 @@ namespace FootyScorer.Data
             return matches;
         }
 
-
+        /// <summary>
+        /// Gets the teams stored in the database.
+        /// </summary>
+        /// <returns>The teams.</returns>
+        /// <param name="func">Func.</param>
+        public List<Team> GetTeams(Func<Team, bool> func)
+        {
+            return _dbManager.GetTeams(func);
+        }
     }
 }

@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FootyScorer.UI.MatchHistory">
 	<ContentPage.Content>
-        <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Fill" Spacing="5" Padding="0">
-            <Label FontSize="10" Text="Round 7" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-            <Label FontSize="10" Text="Home vs. Pakenham Gold" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-            <Label FontSize="10" Text="89   to   90" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-            <Label FontSize="10" Text="Sun, 28 Jun, 2017" FontAttributes="Italic" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Fill" Spacing="5" Padding="5,10,5,10">
+            <Label FontSize="18" FontAttributes="Bold" Text="{Binding Round, Mode=OneWay}" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+            <Label FontSize="16" Text="{Binding CompetitionName, Mode=OneWay}" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+            <Label FontSize="16" Text="{Binding VersingTeams, Mode=OneWay}" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+            <Label FontSize="16" Text="{Binding LongDateText, Mode=OneWay}" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
 
-            <Grid Padding="10" RowSpacing="15" ColumnSpacing="5" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+            <Grid Padding="10, 30, 10, 10" RowSpacing="8" ColumnSpacing="5" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
@@ -22,63 +18,47 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="1" Text="G" />
-                <Label Grid.Row="0" Grid.Column="2" Text="B" />
-                <Label Grid.Row="0" Grid.Column="5" Text="G" />
-                <Label Grid.Row="0" Grid.Column="6" Text="B" />
+                <Label Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="18" Text="{Binding HomeTeamShort, Mode=OneWay}" />
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding HomeTeamTotalShort, Mode=OneWay}" HorizontalTextAlignment="Center" FontSize="24" FontAttributes="Bold" />
+                <Label Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Center" Text="{Binding HomeTeamTotal, Mode=OneWay}" />
+
+                <Label Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding Result, Mode=OneWay}" />
+
+                <Label Grid.Row="0" Grid.RowSpan="2" Grid.Column="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="18" Text="{Binding AwayTeamShort, Mode=OneWay}" />
+                <Label Grid.Row="0" Grid.Column="3" Text="{Binding AwayTeamTotalShort, Mode=OneWay}" HorizontalTextAlignment="Center" FontSize="24" FontAttributes="Bold" />
+                <Label Grid.Row="1" Grid.Column="3" HorizontalTextAlignment="Center" Text="{Binding AwayTeamTotal, Mode=OneWay}" />
+            </Grid>
+            
+            <Grid Padding="10,0,10,10" RowSpacing="15" ColumnSpacing="5" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
                 
-                <Label Grid.Row="1" Grid.Column="0"  Text="Q1" />
-                <Label Grid.Row="1" Grid.Column="1"  Text="1" />
-                <Label Grid.Row="1" Grid.Column="2"  Text="4" />
-                <Label Grid.Row="1" Grid.Column="3"  Text="10" />
+                <Label Grid.Row="0" Grid.Column="0" Text="{Binding HomeTeamQuarterOne, Mode=OneWay}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                <Label Grid.Row="0" Grid.Column="1" Text="1st Quarter" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Label Grid.Row="0" Grid.Column="2" Text="{Binding AwayTeamQuarterOne, Mode=OneWay}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
 
-                <Label Grid.Row="1" Grid.Column="5"  Text="1" />
-                <Label Grid.Row="1" Grid.Column="6"  Text="1" />
-                <Label Grid.Row="1" Grid.Column="7"  Text="7" />
-                
-                <Label Grid.Row="2" Grid.Column="0"  Text="Q2" />
-                <Label Grid.Row="2" Grid.Column="1"  Text="1" />
-                <Label Grid.Row="2" Grid.Column="2"  Text="4" />
-                <Label Grid.Row="2" Grid.Column="3"  Text="10" />
+                <Label Grid.Row="1" Grid.Column="0" Text="{Binding HomeTeamQuarterTwo, Mode=OneWay}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                <Label Grid.Row="1" Grid.Column="1" Text="2nd Quarter" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Label Grid.Row="1" Grid.Column="2" Text="{Binding AwayTeamQuarterTwo, Mode=OneWay}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
 
-                <Label Grid.Row="2" Grid.Column="5"  Text="1" />
-                <Label Grid.Row="2" Grid.Column="6"  Text="1" />
-                <Label Grid.Row="2" Grid.Column="7"  Text="7" />
-                
-                <Label Grid.Row="3" Grid.Column="0"  Text="Q3" />
-                <Label Grid.Row="3" Grid.Column="1"  Text="1" />
-                <Label Grid.Row="3" Grid.Column="2"  Text="4" />
-                <Label Grid.Row="3" Grid.Column="3"  Text="10" />
+                <Label Grid.Row="2" Grid.Column="0" Text="{Binding HomeTeamQuarterThree, Mode=OneWay}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                <Label Grid.Row="2" Grid.Column="1" Text="3rd Quarter" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Label Grid.Row="2" Grid.Column="2" Text="{Binding AwayTeamQuarterThree, Mode=OneWay}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
 
-                <Label Grid.Row="3" Grid.Column="5"  Text="1" />
-                <Label Grid.Row="3" Grid.Column="6"  Text="1" />
-                <Label Grid.Row="3" Grid.Column="7"  Text="7" />
-                
-                <Label Grid.Row="4" Grid.Column="0"  Text="Q4" />
-                <Label Grid.Row="4" Grid.Column="1"  Text="1" />
-                <Label Grid.Row="4" Grid.Column="2"  Text="4" />
-                <Label Grid.Row="4" Grid.Column="3"  Text="10" />
-
-                <Label Grid.Row="4" Grid.Column="5"  Text="1" />
-                <Label Grid.Row="4" Grid.Column="6"  Text="1" />
-                <Label Grid.Row="4" Grid.Column="7"  Text="7" />
-
-                <Label Grid.Row="5" Grid.Column="0"  Text="T" />
-                <Label Grid.Row="5" Grid.Column="1"  Text="1" />
-                <Label Grid.Row="5" Grid.Column="2"  Text="4" />
-                <Label Grid.Row="5" Grid.Column="3"  Text="10" />
-
-                <Label Grid.Row="5" Grid.Column="5"  Text="1" />
-                <Label Grid.Row="5" Grid.Column="6"  Text="1" />
-                <Label Grid.Row="5" Grid.Column="7"  Text="7" />
-               
-                <BoxView Grid.Row="1" Grid.RowSpan="5" Grid.Column="4" HorizontalOptions="Center" VerticalOptions="Fill" WidthRequest="0.5" Color="Black" />
-                
+                <Label Grid.Row="3" Grid.Column="0" Text="{Binding HomeTeamQuarterFour, Mode=OneWay}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                <Label Grid.Row="3" Grid.Column="1" Text="4th Quarter" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Label Grid.Row="3" Grid.Column="2" Text="{Binding AwayTeamQuarterFour, Mode=OneWay}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </Grid>
         </StackLayout>
 	</ContentPage.Content>

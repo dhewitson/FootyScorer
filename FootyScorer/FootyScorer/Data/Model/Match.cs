@@ -7,6 +7,10 @@ namespace FootyScorer.Data.Model
 
         public string HomeTeam { get; set; }
 
+		public string AwayTeamShort { get; set; }
+
+		public string HomeTeamShort { get; set; }
+
         public DateTime Date { get; set; }
 
         public string Venue { get; set; }
@@ -16,5 +20,7 @@ namespace FootyScorer.Data.Model
         public Guid AwayScore { get; set; }
 
         public Guid HomeScore { get; set; }
+
+        public string CompetitionName { get; set; }
     }
 }

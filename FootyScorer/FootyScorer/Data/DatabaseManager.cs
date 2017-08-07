@@ -16,6 +16,7 @@ namespace FootyScorer.Data
 			_database = connection;
 			_database.CreateTable<Match>();
 			_database.CreateTable<Score>();
+            _database.CreateTable<Team>();
         }
 
         /// <summary>
@@ -46,6 +47,26 @@ namespace FootyScorer.Data
         public void SaveMatch(Match match)
         {
             ExecuteInsertOrReplace(match);
+        }
+
+        /// <summary>
+        /// Saves the team.
+        /// </summary>
+        /// <param name="team">Team.</param>
+        public void SaveTeam(Team team)
+        {
+            ExecuteInsertOrReplace(team);
+        }
+
+        /// <summary>
+        /// Gets the teams.
+        /// </summary>
+        /// <returns>The teams.</returns>
+        /// <param name="func">Func.</param>
+        public List<Team> GetTeams(Func<Team, bool> func)
+        {
+            lock (Locker)
+                return _database.Table<Team>().Where(func).ToList();
         }
 
         /// <summary>

@@ -19,8 +19,11 @@ namespace FootyScorer.Data
             {
                 AwayTeam = model.AwayTeam,
                 HomeTeam = model.HomeTeam,
+                AwayTeamShort = model.AwayTeamShort,
+                HomeTeamShort = model.HomeTeamShort,
+                CompetitionName = model.CompetitionName,
                 Date = model.Date,
-                Round = model.Round.ToString(),
+                Round = $"Round {model.Round}",
                 Venue = model.Venue,
                 Id = model.Id
             };
@@ -39,10 +42,13 @@ namespace FootyScorer.Data
 			{
 				AwayTeam = model.AwayTeam,
 				HomeTeam = model.HomeTeam,
+				AwayTeamShort = model.AwayTeamShort,
+				HomeTeamShort = model.HomeTeamShort,
+				CompetitionName = model.CompetitionName,
                 HomeScore = model.HomeScore.Id,
                 AwayScore = model.AwayScore.Id,
 				Date = model.Date,
-                Round = Convert.ToInt32(model.Round ?? "0"),
+                Round = Convert.ToInt32(model.Round.Replace("Round ", "") ?? "0"),
 				Venue = model.Venue,
 				Id = model.Id
 			};

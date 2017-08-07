@@ -6,9 +6,12 @@ namespace FootyScorer.ViewModel
     {
         private string _homeTeam;
         private string _awayTeam;
+        private string _competitionName;
+		private string _homeTeamShort;
+		private string _awayTeamShort;
         private string _round;
         private string _venue;
-        
+
         /// <summary>
         /// Gets or sets the home team.
         /// </summary>
@@ -37,6 +40,48 @@ namespace FootyScorer.ViewModel
 			}
 		}
 
+		/// <summary>
+		/// Gets or sets the home team.
+		/// </summary>
+		/// <value>The home team.</value>
+		public string HomeTeamShort
+		{
+			get { return _homeTeamShort; }
+			set
+			{
+				_homeTeamShort = value;
+				OnPropertyChanged(nameof(HomeTeamShort));
+			}
+		}
+
+		/// <summary>
+		/// Gets or sets the away team short name.
+		/// </summary>
+		/// <value>The away team.</value>
+		public string AwayTeamShort
+		{
+			get { return _awayTeamShort; }
+			set
+			{
+				_awayTeamShort = value;
+				OnPropertyChanged(nameof(AwayTeamShort));
+			}
+		}
+
+        /// <summary>
+        /// Gets or sets the name of the competition.
+        /// </summary>
+        /// <value>The name of the competition.</value>
+		public string CompetitionName
+		{
+			get { return _competitionName; }
+			set
+			{
+				_competitionName = value;
+				OnPropertyChanged(nameof(CompetitionName));
+			}
+		}
+
         /// <summary>
         /// Gets or sets the round.
         /// </summary>
@@ -61,7 +106,13 @@ namespace FootyScorer.ViewModel
         /// Gets the date as text.
         /// </summary>
         /// <value>The date text.</value>
-        public string DateText => Date.ToString("ddd MMM yyyy, HH:mm");
+        public string DateText => Date.ToString("ddd, dd MMM yyyy");
+
+        /// <summary>
+        /// Gets the long date text.
+        /// </summary>
+        /// <value>The long date text.</value>
+        public string LongDateText => Date.ToString("dddd, dd MMMM yyyy");
 
         /// <summary>
         /// Gets or sets the venue.
@@ -88,5 +139,89 @@ namespace FootyScorer.ViewModel
         /// </summary>
         /// <value>The home score.</value>
         public ScoreViewModel HomeScore { get; set; }
+
+        /// <summary>
+        /// Gets or sets the away team short.
+        /// </summary>
+        /// <value>The away team short.</value>
+        public string AwayTeamTotalShort => AwayScore.TotalScore.ToString();
+
+        /// <summary>
+        /// Gets the away team total.
+        /// </summary>
+        /// <value>The away team total.</value>
+        public string AwayTeamTotal => AwayScore.TotalScoreLong;
+
+        /// <summary>
+        /// Gets the home team short.
+        /// </summary>
+        /// <value>The home team short.</value>
+        public string HomeTeamTotalShort => HomeScore.TotalScore.ToString();
+
+        /// <summary>
+        /// Gets the home team total.
+        /// </summary>
+        /// <value>The home team total.</value>
+        public string HomeTeamTotal => HomeScore.TotalScoreLong;
+
+        /// <summary>
+        /// Gets the away team quarter one.
+        /// </summary>
+        /// <value>The away team quarter one.</value>
+        public string AwayTeamQuarterOne => AwayScore.QuarterOneScore;
+
+        /// <summary>
+        /// Gets the away team quarter two.
+        /// </summary>
+        /// <value>The away team quarter two.</value>
+        public string AwayTeamQuarterTwo => AwayScore.QuarterTwoScore;
+
+        /// <summary>
+        /// Gets the away team quarter three.
+        /// </summary>
+        /// <value>The away team quarter three.</value>
+        public string AwayTeamQuarterThree => AwayScore.QuarterThreeScore;
+
+        /// <summary>
+        /// Gets the away team quarter four.
+        /// </summary>
+        /// <value>The away team quarter four.</value>
+        public string AwayTeamQuarterFour => AwayScore.QuarterFourScore;
+
+        /// <summary>
+        /// Gets the home team quarter one.
+        /// </summary>
+        /// <value>The home team quarter one.</value>
+		public string HomeTeamQuarterOne => HomeScore.QuarterOneScore;
+
+        /// <summary>
+        /// Gets the home team quarter two.
+        /// </summary>
+        /// <value>The home team quarter two.</value>
+		public string HomeTeamQuarterTwo => HomeScore.QuarterTwoScore;
+
+        /// <summary>
+        /// Gets the home team quarter three.
+        /// </summary>
+        /// <value>The home team quarter three.</value>
+		public string HomeTeamQuarterThree => HomeScore.QuarterThreeScore;
+
+        /// <summary>
+        /// Gets the home team quarter four.
+        /// </summary>
+        /// <value>The home team quarter four.</value>
+		public string HomeTeamQuarterFour => HomeScore.QuarterFourScore;
+       
+        /// <summary>
+        /// Gets the result.
+        /// </summary>
+        /// <value>The result.</value>
+        public string Result => HomeScore.TotalScore == AwayScore.TotalScore ? "drawn" : HomeScore.TotalScore > AwayScore.TotalScore ? "def" : "def by";
+
+        /// <summary>
+        /// Gets the versing teams.
+        /// </summary>
+        /// <value>The versing teams.</value>
+        public string VersingTeams => $"{HomeTeam} vs. {AwayTeam}";
     }
 }
