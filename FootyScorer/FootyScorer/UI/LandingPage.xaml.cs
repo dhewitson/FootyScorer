@@ -50,6 +50,11 @@ namespace FootyScorer.UI
             int column = 0;
             int index = 0;
 
+            NoPreviousMatchesLabel.IsVisible = _matches == null || !_matches.Any();
+            ViewMoreStack.IsVisible = !NoPreviousMatchesLabel.IsVisible;
+
+            if (_matches == null) return;
+
             foreach (var m in _matches)
             {
 				var boxView = new RoundedBoxView
@@ -70,7 +75,7 @@ namespace FootyScorer.UI
 				    {
 						new Label
 						{
-							FontSize = 10,
+							FontSize = 12,
 							Text = m.Round,
 							FontAttributes = FontAttributes.Bold,
 							TextColor = Color.Black,
@@ -89,8 +94,8 @@ namespace FootyScorer.UI
 						},
 						new Label
 						{
-							FontSize = 10,
-                            Text = $"{m.HomeTeamTotalShort}   to   {m.AwayTeamTotalShort}",
+							FontSize = 12,
+                            Text = $"{m.HomeTeamTotalShort} to {m.AwayTeamTotalShort}",
 							FontAttributes = FontAttributes.Bold,
 							TextColor = Color.Black,
 							HorizontalOptions = LayoutOptions.Center,

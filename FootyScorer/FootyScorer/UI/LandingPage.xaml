@@ -37,6 +37,7 @@
                 <BoxView VerticalOptions="End" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="0.5" BackgroundColor="Black" />
                 
                 <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Spacing="0" Padding="0">
+                    <Label Text="No recent games were found." x:Name="NoPreviousMatchesLabel" FontSize="12" FontAttributes="Bold" />
                     <Grid x:Name="MatchesGrid" Padding="0" RowSpacing="10" ColumnSpacing="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="90"></RowDefinition>
@@ -48,7 +49,7 @@
                         </Grid.ColumnDefinitions>
                     </Grid>
                 </StackLayout>
-                 <StackLayout Grid.Row="3" Grid.Column="2" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="End" Spacing="4" Padding="0">
+                 <StackLayout x:Name="ViewMoreStack" Grid.Row="3" Grid.Column="2" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="End" Spacing="4" Padding="0">
                     <Label Text="View More" Grid.Row="3" Grid.Column="2" TextColor="{x:Static local:ThemeSettings.DefaultButtonAsLinkColor}" FontSize="12" HorizontalOptions="End" VerticalTextAlignment="Center"></Label>
                     <iconize:IconLabel FontSize="13" Text="fa-angle-right" TextColor="{x:Static local:ThemeSettings.DefaultButtonAsLinkColor}" VerticalTextAlignment="Center" />
                 </StackLayout>
