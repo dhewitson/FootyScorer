@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ui="clr-namespace:FootyScorer.UI;assembly=FootyScorer"
+    xmlns:local="clr-namespace:FootyScorer.Constants;assembly=FootyScorer"
+    xmlns:footyscorer="clr-namespace:FootyScorer;assembly=FootyScorer"
+    xmlns:iconize="clr-namespace:FormsPlugin.Iconize;assembly=FormsPlugin.Iconize"
+    x:Class="FootyScorer.UI.Match.NewMatch">
+    
+	<ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" FontSize="16" FontAttributes="Bold" Text="Enter Match Details Below:" TextColor="{x:Static local:ThemeSettings.DefaultApplicationColor}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+            
+            <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Fill" Spacing="2" Padding="30,15,30,15">
+                <Label FontSize="12" FontAttributes="Bold" Text="ROUND" TextColor="{x:Static local:ThemeSettings.DefaultComplementaryColor}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"></Label>
+                <Editor Keyboard="Numeric" FontSize="18" Text="{Binding Round, Mode=TwoWay}" HorizontalOptions="Fill"></Editor>
+                <BoxView VerticalOptions="End" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="0.5" BackgroundColor="{x:Static local:ThemeSettings.DefaultComplementaryColor}" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Fill" Spacing="2" Padding="30,15,30,15">
+                <Label FontSize="12" FontAttributes="Bold" Text="VENUE" TextColor="{x:Static local:ThemeSettings.DefaultComplementaryColor}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"></Label>
+                <Editor Keyboard="Numeric" FontSize="18" Text="{Binding Round, Mode=TwoWay}" HorizontalOptions="Fill"></Editor>
+                <BoxView VerticalOptions="End" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="0.5" BackgroundColor="{x:Static local:ThemeSettings.DefaultComplementaryColor}" />
+            </StackLayout>
+        </Grid>
+        
+
+	</ContentPage.Content>
+</ContentPage>

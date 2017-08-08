@@ -38,6 +38,9 @@
     <EmbeddedResource Include="UI\MatchHistory.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Match\NewMatch.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs">
@@ -73,6 +76,10 @@
     <Compile Include="Data\Grouping.cs" />
     <Compile Include="UI\Controls\DateGroupHeaderCell.cs" />
     <Compile Include="Data\Model\Team.cs" />
+    <Compile Include="UI\Controls\MatchCell.cs" />
+    <Compile Include="UI\Match\NewMatch.xaml.cs">
+      <DependentUpon>NewMatch.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UI\" />
@@ -83,6 +90,7 @@
     <Folder Include="Data\Model\" />
     <Folder Include="Constants\" />
     <Folder Include="UI\Controls\" />
+    <Folder Include="UI\Match\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

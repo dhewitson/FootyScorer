@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FootyScorer.UI.MatchHistory">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:FootyScorer.Constants;assembly=FootyScorer"
+    x:Class="FootyScorer.UI.MatchHistory">
 	<ContentPage.Content>
-        <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Fill" Spacing="5" Padding="5,10,5,10">
-            <Label FontSize="18" FontAttributes="Bold" Text="{Binding Round, Mode=OneWay}" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Fill" Spacing="7" Padding="5,10,5,10">
+            <Label FontSize="16" FontAttributes="Bold" Text="{Binding Round, Mode=OneWay}" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             <Label FontSize="16" Text="{Binding CompetitionName, Mode=OneWay}" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             <Label FontSize="16" Text="{Binding VersingTeams, Mode=OneWay}" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             <Label FontSize="16" Text="{Binding LongDateText, Mode=OneWay}" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
 
-            <Grid Padding="10, 30, 10, 10" RowSpacing="8" ColumnSpacing="5" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+            <BoxView Margin="0,30,0,0" VerticalOptions="End" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="0.5" BackgroundColor="{x:Static local:ThemeSettings.DefaultApplicationColor}" />
+            
+            <Grid Padding="10" RowSpacing="8" ColumnSpacing="5" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
@@ -20,18 +25,20 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="18" Text="{Binding HomeTeamShort, Mode=OneWay}" />
+                <Label TextColor="{x:Static local:ThemeSettings.DefaultComplementaryColor}" FontAttributes="Bold" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="18" Text="{Binding HomeTeamShort, Mode=OneWay}" />
                 <Label Grid.Row="0" Grid.Column="1" Text="{Binding HomeTeamTotalShort, Mode=OneWay}" HorizontalTextAlignment="Center" FontSize="24" FontAttributes="Bold" />
                 <Label Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Center" Text="{Binding HomeTeamTotal, Mode=OneWay}" />
 
                 <Label Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding Result, Mode=OneWay}" />
 
-                <Label Grid.Row="0" Grid.RowSpan="2" Grid.Column="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="18" Text="{Binding AwayTeamShort, Mode=OneWay}" />
+                <Label TextColor="{x:Static local:ThemeSettings.DefaultComplementaryColor}" FontAttributes="Bold" Grid.Row="0" Grid.RowSpan="2" Grid.Column="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="18" Text="{Binding AwayTeamShort, Mode=OneWay}" />
                 <Label Grid.Row="0" Grid.Column="3" Text="{Binding AwayTeamTotalShort, Mode=OneWay}" HorizontalTextAlignment="Center" FontSize="24" FontAttributes="Bold" />
                 <Label Grid.Row="1" Grid.Column="3" HorizontalTextAlignment="Center" Text="{Binding AwayTeamTotal, Mode=OneWay}" />
             </Grid>
+
+            <BoxView VerticalOptions="End" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="0.5" BackgroundColor="{x:Static local:ThemeSettings.DefaultApplicationColor}" />
             
-            <Grid Padding="10,0,10,10" RowSpacing="15" ColumnSpacing="5" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+            <Grid Padding="10,30,10,10" RowSpacing="15" ColumnSpacing="5" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>

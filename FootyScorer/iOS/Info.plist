@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>FootyScorer</string>
+	<string>Footy Scorer</string>
 	<key>CFBundleName</key>
-	<string>FootyScorer</string>
+	<string>Footy Scorer</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.dsh-computing.footyscorer</string>
 	<key>CFBundleShortVersionString</key>
@@ -42,7 +42,7 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
-    		<string>iconize-fontawesome.ttf</string>
+		<string>iconize-fontawesome.ttf</string>
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>

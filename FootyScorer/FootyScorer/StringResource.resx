@@ -80,4 +80,50 @@
 	<data name="FinishLabel" xml:space="preserve">
         <value>Finish</value>
     </data>
+	<data name="FilterLabel" xml:space="preserve">
+        <value>Filter</value>
+    </data>
+    <data name="MatchPageTitle" xml:space="preserve">
+        <value>Match History</value>
+    </data>
+	    <data name="NewMatchTitle" xml:space="preserve">
+        <value>Start New Match</value>
+    </data>
+	    <data name="NewMatchButton" xml:space="preserve">
+        <value>Start Match</value>
+    </data>
+	<data name="NoRecentLabel" xml:space="preserve">
+        <value>No recent games were found.</value>
+    </data>
+	<data name="ViewMoreLabel" xml:space="preserve">
+        <value>View More</value>
+    </data>
+	<data name="RecentLabel" xml:space="preserve">
+        <value>Recent</value>
+    </data>
+	<data name="MatchOnlyLabel" xml:space="preserve">
+        <value>Matches</value>
+    </data>
+	<data name="IntroLabelText" xml:space="preserve">
+        <value>To start scoring a game, tap the 'Start Match' button below.</value>
+    </data>
+	<data name="NextLabel" xml:space="preserve">
+        <value>Next</value>
+    </data>
+	<data name="DrawnLabel" xml:space="preserve">
+        <value>drawn</value>
+    </data>
+	<data name="DefeatedLabel" xml:space="preserve">
+        <value>def</value>
+    </data>
+	<data name="DefeatedByLabel" xml:space="preserve">
+        <value>def by</value>
+    </data>
+	<data name="VersusLabel" xml:space="preserve">
+        <value> vs. </value>
+    </data>
+	<data name="ScoreToLabel" xml:space="preserve">
+        <value> to </value>
+    </data>
+	
 </root>

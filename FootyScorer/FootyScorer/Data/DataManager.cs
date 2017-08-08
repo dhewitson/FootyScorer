@@ -85,6 +85,9 @@ namespace FootyScorer.Data
                 AwayTeam = "Away Team",
                 Round = "0",
                 Venue = "Enter Venue",
+                CompetitionName = "Enter Competition",
+                AwayTeamShort = "AWA",
+                HomeTeamShort = "HOM",
                 Date = DateTime.Now
             };
 

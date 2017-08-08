@@ -129,31 +129,31 @@ namespace FootyScorer.ViewModel
         /// Gets the quarter one score.
         /// </summary>
         /// <value>The quarter one score.</value>
-        public string QuarterOneScore => $"{QuarterOneGoals}.{QuarterOnePoints} {QuarterOneTotal}";
+        public string QuarterOneScore => $"{QuarterOneGoals}.{QuarterOnePoints}.{QuarterOneTotal}";
 
         /// <summary>
         /// Gets the quarter two score.
         /// </summary>
         /// <value>The quarter two score.</value>
-        public string QuarterTwoScore => $"{QuarterTwoGoals}.{QuarterTwoPoints} {QuarterTwoTotal}";
+        public string QuarterTwoScore => $"{QuarterTwoGoals}.{QuarterTwoPoints}.{QuarterTwoTotal}";
 
         /// <summary>
         /// Gets the quarter three score.
         /// </summary>
         /// <value>The quarter three score.</value>
-        public string QuarterThreeScore => $"{QuarterThreeGoals}.{QuarterThreePoints} {QuarterThreeTotal}";
+        public string QuarterThreeScore => $"{QuarterThreeGoals}.{QuarterThreePoints}.{QuarterThreeTotal}";
 
         /// <summary>
         /// Gets the quarter four score.
         /// </summary>
         /// <value>The quarter four score.</value>
-        public string QuarterFourScore => $"{QuarterFourGoals}.{QuarterFourPoints} {QuarterFourTotal}";
+        public string QuarterFourScore => $"{QuarterFourGoals}.{QuarterFourPoints}.{QuarterFourTotal}";
 
         /// <summary>
         /// Gets the total score long.
         /// </summary>
         /// <value>The total score long.</value>
-        public string TotalScoreLong => $"{(QuarterOneGoals + QuarterTwoGoals + QuarterThreeGoals + QuarterFourGoals)}.{(QuarterOnePoints + QuarterTwoPoints + QuarterThreePoints + QuarterFourPoints)} {TotalScore}";
+        public string TotalScoreLong => $"{(QuarterOneGoals + QuarterTwoGoals + QuarterThreeGoals + QuarterFourGoals)}.{(QuarterOnePoints + QuarterTwoPoints + QuarterThreePoints + QuarterFourPoints)}.{TotalScore}";
 
         /// <summary>
         /// Gets the quarter one total.

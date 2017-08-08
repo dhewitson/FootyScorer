@@ -88,5 +88,95 @@ namespace FootyScorer {
                 return ResourceManager.GetString("FinishLabel", resourceCulture);
             }
         }
+        
+        internal static string FilterLabel {
+            get {
+                return ResourceManager.GetString("FilterLabel", resourceCulture);
+            }
+        }
+        
+        internal static string MatchPageTitle {
+            get {
+                return ResourceManager.GetString("MatchPageTitle", resourceCulture);
+            }
+        }
+        
+        internal static string NewMatchTitle {
+            get {
+                return ResourceManager.GetString("NewMatchTitle", resourceCulture);
+            }
+        }
+        
+        internal static string NewMatchButton {
+            get {
+                return ResourceManager.GetString("NewMatchButton", resourceCulture);
+            }
+        }
+        
+        internal static string NoRecentLabel {
+            get {
+                return ResourceManager.GetString("NoRecentLabel", resourceCulture);
+            }
+        }
+        
+        internal static string ViewMoreLabel {
+            get {
+                return ResourceManager.GetString("ViewMoreLabel", resourceCulture);
+            }
+        }
+        
+        internal static string RecentLabel {
+            get {
+                return ResourceManager.GetString("RecentLabel", resourceCulture);
+            }
+        }
+        
+        internal static string MatchOnlyLabel {
+            get {
+                return ResourceManager.GetString("MatchOnlyLabel", resourceCulture);
+            }
+        }
+        
+        internal static string IntroLabelText {
+            get {
+                return ResourceManager.GetString("IntroLabelText", resourceCulture);
+            }
+        }
+        
+        internal static string NextLabel {
+            get {
+                return ResourceManager.GetString("NextLabel", resourceCulture);
+            }
+        }
+        
+        internal static string DrawnLabel {
+            get {
+                return ResourceManager.GetString("DrawnLabel", resourceCulture);
+            }
+        }
+        
+        internal static string DefeatedLabel {
+            get {
+                return ResourceManager.GetString("DefeatedLabel", resourceCulture);
+            }
+        }
+        
+        internal static string DefeatedByLabel {
+            get {
+                return ResourceManager.GetString("DefeatedByLabel", resourceCulture);
+            }
+        }
+        
+        internal static string VersusLabel {
+            get {
+                return ResourceManager.GetString("VersusLabel", resourceCulture);
+            }
+        }
+        
+        internal static string ScoreToLabel {
+            get {
+                return ResourceManager.GetString("ScoreToLabel", resourceCulture);
+            }
+        }
     }
 }

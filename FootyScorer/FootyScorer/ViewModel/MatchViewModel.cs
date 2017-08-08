@@ -93,8 +93,11 @@ namespace FootyScorer.ViewModel
 			{
 				_round = value;
 				OnPropertyChanged(nameof(Round));
+                OnPropertyChanged(nameof(RoundNumber));
 			}
 		}
+
+        public string RoundNumber => Round.Substring(6);
 
         /// <summary>
         /// Gets or sets the date.
@@ -216,12 +219,18 @@ namespace FootyScorer.ViewModel
         /// Gets the result.
         /// </summary>
         /// <value>The result.</value>
-        public string Result => HomeScore.TotalScore == AwayScore.TotalScore ? "drawn" : HomeScore.TotalScore > AwayScore.TotalScore ? "def" : "def by";
+        public string Result => HomeScore.TotalScore == AwayScore.TotalScore ? StringResource.DrawnLabel : HomeScore.TotalScore > AwayScore.TotalScore ? StringResource.DefeatedLabel : StringResource.DefeatedByLabel;
 
         /// <summary>
         /// Gets the versing teams.
         /// </summary>
         /// <value>The versing teams.</value>
-        public string VersingTeams => $"{HomeTeam} vs. {AwayTeam}";
+        public string VersingTeams => $"{HomeTeam}{StringResource.VersusLabel}{AwayTeam}";
+
+        /// <summary>
+        /// Gets the short total score.
+        /// </summary>
+        /// <value>The short total score.</value>
+        public string ShortTotalScore => $"{HomeTeamTotalShort}{StringResource.ScoreToLabel}{AwayTeamTotalShort}";
     }
 }
