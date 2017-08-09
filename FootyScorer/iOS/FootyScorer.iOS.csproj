@@ -116,6 +116,15 @@
     <Reference Include="Plugin.Iconize.FontAwesome.iOS">
       <HintPath>..\packages\Xam.Plugin.Iconize.FontAwesome.1.0.10\lib\Xamarin.iOS10\Plugin.Iconize.FontAwesome.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="Syncfusion.SfAutoComplete.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfAutoComplete.15.3.0.26\lib\Xamarin.iOS10\Syncfusion.SfAutoComplete.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfAutoComplete.XForms.iOS">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfAutoComplete.15.3.0.26\lib\Xamarin.iOS10\Syncfusion.SfAutoComplete.XForms.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfAutoComplete.iOS">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfAutoComplete.IOS.15.3.0.26\lib\Xamarin.iOS10\Syncfusion.SfAutoComplete.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FootyScorer\FootyScorer.csproj">

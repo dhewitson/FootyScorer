@@ -6,8 +6,9 @@
     xmlns:footyscorer="clr-namespace:FootyScorer;assembly=FootyScorer"
     xmlns:customControls="clr-namespace:FootyScorer.UI.Controls;assembly=FootyScorer"
     xmlns:iconize="clr-namespace:FormsPlugin.Iconize;assembly=FormsPlugin.Iconize"
+    xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
     x:Class="FootyScorer.UI.Match.NewMatch">
-    
+
 	<ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -25,9 +26,9 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Fill" Spacing="4" Padding="30,5,30,10">
+            <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Fill" Spacing="0" Padding="30,5,30,10">
                 <Label FontSize="12" FontAttributes="Bold" Text="{x:Static footyscorer:StringResource.CompetitionLabel}" TextColor="{x:Static local:ThemeSettings.DefaultComplementaryColor}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"></Label>
-                <Entry Placeholder="{x:Static footyscorer:StringResource.SuggestionPlaceholder}" FontSize="16" Text="{Binding CompetitionName, Mode=TwoWay}" HorizontalOptions="Fill"></Entry>
+                <autocomplete:SfAutoComplete BorderColor="Transparent" AutoCompleteMode="Suggest" SuggestionMode="StartsWith" Text="{Binding CompetitionName, Mode=TwoWay}" TextSize="16" Watermark="{x:Static footyscorer:StringResource.SuggestionPlaceholder}" x:Name="CompetitionAutoComplete"  HorizontalOptions="Fill"></autocomplete:SfAutoComplete>
                 <BoxView VerticalOptions="End" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="0.5" BackgroundColor="{x:Static local:ThemeSettings.DefaultComplementaryColor}" />
             </StackLayout>
             
@@ -67,7 +68,7 @@
                 <BoxView VerticalOptions="End" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="0.5" BackgroundColor="{x:Static local:ThemeSettings.DefaultComplementaryColor}" />
             </StackLayout>
 
-            <StackLayout Grid.Row="8" Grid.Column="0" Padding="30,0,30,0">
+            <StackLayout Grid.Row="8" Grid.Column="0" Spacing="0" Padding="30,0,30,0">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"></RowDefinition>

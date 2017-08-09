@@ -30,6 +30,8 @@ namespace FootyScorer.iOS
                     File.Copy(seedFile, dbPath);
             }
 
+            new Syncfusion.SfAutoComplete.XForms.iOS.SfAutoCompleteRenderer();
+
             LoadApplication(new App(new SQLite.Net.SQLiteConnection(platform, dbPath, false)));
 
             return base.FinishedLaunching(uiApplication, launchOptions);

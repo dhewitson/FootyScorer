@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using FootyScorer.Constants;
 using FootyScorer.Data.Model;
@@ -23,6 +24,7 @@ namespace FootyScorer.UI.Match
             BackgroundColor = ThemeSettings.DefaultBackgroundColour;
 
             _model = model;
+            _model.CompetitionName = _model.CompetitionName ?? "";
             BindingContext = _model;
         }
 
@@ -32,6 +34,7 @@ namespace FootyScorer.UI.Match
             HomeShort.TextChanged += ShortTextFieldChanged;
             AwayShort.TextChanged += ShortTextFieldChanged;
             _teams = App.DataManager.GetTeams(t => true);
+            CompetitionAutoComplete.DataSource = _teams.Select(t => t.CompetitionName).Distinct().ToList();
         }
 
         protected override void OnDisappearing()
@@ -49,7 +52,7 @@ namespace FootyScorer.UI.Match
 
         private void ShortTextFieldChanged(object sender, EventArgs e)
         {
-            var editor = (Editor)sender;
+            var editor = (Entry)sender;
 
             if (editor.Text.Length > 3)
                 editor.Text = editor.Text.Substring(0, 3);
