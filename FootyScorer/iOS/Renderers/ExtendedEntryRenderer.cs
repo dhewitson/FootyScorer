@@ -31,6 +31,7 @@ namespace FootyScorer.iOS.Renderers
 			base.OnElementChanged(e);
 
 			Control.ClearButtonMode = UITextFieldViewMode.WhileEditing;
+            Control.BorderStyle = UITextBorderStyle.None;
 
 			//Unhooked in dispose
 			Control.ShouldReturn += ReturnPressed;

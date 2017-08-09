@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using FootyScorer.Constants;
+using FootyScorer.Data.Model;
 using FootyScorer.ViewModel;
 using Xamarin.Forms;
 
@@ -8,6 +10,7 @@ namespace FootyScorer.UI.Match
     public partial class NewMatch : ContentPage, IDisposable
     {
         private MatchViewModel _model;
+        private List<Team> _teams;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:FootyScorer.UI.Match.NewMatch"/> class.
@@ -23,10 +26,33 @@ namespace FootyScorer.UI.Match
             BindingContext = _model;
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            HomeShort.TextChanged += ShortTextFieldChanged;
+            AwayShort.TextChanged += ShortTextFieldChanged;
+            _teams = App.DataManager.GetTeams(t => true);
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            HomeShort.TextChanged -= ShortTextFieldChanged;
+            AwayShort.TextChanged -= ShortTextFieldChanged;
+        }
+
         private bool Validated()
         {
             // TODO: Validate data.
             return false;
+        }
+
+        private void ShortTextFieldChanged(object sender, EventArgs e)
+        {
+            var editor = (Editor)sender;
+
+            if (editor.Text.Length > 3)
+                editor.Text = editor.Text.Substring(0, 3);
         }
 
         #region IDisposable Support

@@ -87,7 +87,7 @@
         <value>Match History</value>
     </data>
 	    <data name="NewMatchTitle" xml:space="preserve">
-        <value>Start New Match</value>
+        <value>Enter Match Details</value>
     </data>
 	    <data name="NewMatchButton" xml:space="preserve">
         <value>Start Match</value>
@@ -125,5 +125,37 @@
 	<data name="ScoreToLabel" xml:space="preserve">
         <value> to </value>
     </data>
-	
+	<data name="StartMatchButtonText" xml:space="preserve">
+        <value>START MATCH</value>
+    </data>
+	<data name="AwayTeamShortLabel" xml:space="preserve">
+        <value>AWAY TEAM SHORT</value>
+    </data>
+	<data name="HomeTeamLabel" xml:space="preserve">
+        <value>HOME TEAM</value>
+    </data>
+	<data name="AwayTeamLabel" xml:space="preserve">
+        <value>AWAY TEAM</value>
+    </data>
+    <data name="HomeTeamShortLabel" xml:space="preserve">
+        <value>HOME TEAM SHORT</value>
+    </data>
+	<data name="VenueLabel" xml:space="preserve">
+        <value>VENUE</value>
+    </data>
+	<data name="RoundLabel" xml:space="preserve">
+        <value>ROUND</value>
+    </data>
+	<data name="CompetitionLabel" xml:space="preserve">
+        <value>COMPETITION</value>
+    </data>
+	<data name="SuggestionPlaceholder" xml:space="preserve">
+        <value>begin typing for suggestions</value>
+    </data>
+	<data name="VenuePlaceholder" xml:space="preserve">
+        <value>venue name</value>
+    </data>
+	<data name="RoundPlaceholder" xml:space="preserve">
+        <value>round number</value>
+    </data>
 </root>

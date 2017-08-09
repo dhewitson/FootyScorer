@@ -31,10 +31,9 @@ namespace FootyScorer.Data
 			if (awayTeam == null)
 				_dbManager.SaveTeam(new Team { CompetitionName = match.CompetitionName, Name = match.AwayTeam, ShortName = match.AwayTeamShort });
 
-
 			var homeTeam = _dbManager.GetTeams(t => t.Name == match.HomeTeam && t.CompetitionName == match.CompetitionName).FirstOrDefault();
 
-			if (awayTeam == null)
+			if (homeTeam == null)
 				_dbManager.SaveTeam(new Team { CompetitionName = match.CompetitionName, Name = match.HomeTeam, ShortName = match.HomeTeamShort });
 
             if (match.AwayScore != null)
@@ -81,13 +80,6 @@ namespace FootyScorer.Data
                 {
                     Id = Guid.NewGuid()
                 },
-                HomeTeam = "Home Team",
-                AwayTeam = "Away Team",
-                Round = "0",
-                Venue = "Enter Venue",
-                CompetitionName = "Enter Competition",
-                AwayTeamShort = "AWA",
-                HomeTeamShort = "HOM",
                 Date = DateTime.Now
             };
 

@@ -178,5 +178,71 @@ namespace FootyScorer {
                 return ResourceManager.GetString("ScoreToLabel", resourceCulture);
             }
         }
+        
+        internal static string StartMatchButtonText {
+            get {
+                return ResourceManager.GetString("StartMatchButtonText", resourceCulture);
+            }
+        }
+        
+        internal static string AwayTeamShortLabel {
+            get {
+                return ResourceManager.GetString("AwayTeamShortLabel", resourceCulture);
+            }
+        }
+        
+        internal static string HomeTeamLabel {
+            get {
+                return ResourceManager.GetString("HomeTeamLabel", resourceCulture);
+            }
+        }
+        
+        internal static string AwayTeamLabel {
+            get {
+                return ResourceManager.GetString("AwayTeamLabel", resourceCulture);
+            }
+        }
+        
+        internal static string HomeTeamShortLabel {
+            get {
+                return ResourceManager.GetString("HomeTeamShortLabel", resourceCulture);
+            }
+        }
+        
+        internal static string VenueLabel {
+            get {
+                return ResourceManager.GetString("VenueLabel", resourceCulture);
+            }
+        }
+        
+        internal static string RoundLabel {
+            get {
+                return ResourceManager.GetString("RoundLabel", resourceCulture);
+            }
+        }
+        
+        internal static string CompetitionLabel {
+            get {
+                return ResourceManager.GetString("CompetitionLabel", resourceCulture);
+            }
+        }
+        
+        internal static string SuggestionPlaceholder {
+            get {
+                return ResourceManager.GetString("SuggestionPlaceholder", resourceCulture);
+            }
+        }
+        
+        internal static string VenuePlaceholder {
+            get {
+                return ResourceManager.GetString("VenuePlaceholder", resourceCulture);
+            }
+        }
+        
+        internal static string RoundPlaceholder {
+            get {
+                return ResourceManager.GetString("RoundPlaceholder", resourceCulture);
+            }
+        }
     }
 }
