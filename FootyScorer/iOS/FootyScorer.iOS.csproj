@@ -171,6 +171,7 @@
     <Compile Include="Renderers\TintedImageRenderer.cs" />
     <Compile Include="Renderers\RoundedBoxViewRenderer.cs" />
     <Compile Include="Renderers\ExtendedEntryRenderer.cs" />
+    <Compile Include="Renderers\RecentViewCellRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Resources\gamedb.db3" />

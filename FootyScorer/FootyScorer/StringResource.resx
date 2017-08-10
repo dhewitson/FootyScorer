@@ -150,12 +150,12 @@
         <value>COMPETITION</value>
     </data>
 	<data name="SuggestionPlaceholder" xml:space="preserve">
-        <value>begin typing for suggestions</value>
+        <value>type for suggestions</value>
     </data>
 	<data name="VenuePlaceholder" xml:space="preserve">
-        <value>venue name</value>
+        <value>enter venue name</value>
     </data>
 	<data name="RoundPlaceholder" xml:space="preserve">
-        <value>round number</value>
+        <value>enter round number</value>
     </data>
 </root>

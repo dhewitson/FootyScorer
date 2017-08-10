@@ -26,15 +26,21 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Fill" Spacing="0" Padding="30,5,30,10">
-                <Label FontSize="12" FontAttributes="Bold" Text="{x:Static footyscorer:StringResource.CompetitionLabel}" TextColor="{x:Static local:ThemeSettings.DefaultComplementaryColor}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"></Label>
-                <autocomplete:SfAutoComplete BorderColor="Transparent" AutoCompleteMode="Suggest" SuggestionMode="StartsWith" Text="{Binding CompetitionName, Mode=TwoWay}" TextSize="16" Watermark="{x:Static footyscorer:StringResource.SuggestionPlaceholder}" x:Name="CompetitionAutoComplete"  HorizontalOptions="Fill"></autocomplete:SfAutoComplete>
-                <BoxView VerticalOptions="End" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="0.5" BackgroundColor="{x:Static local:ThemeSettings.DefaultComplementaryColor}" />
+            <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Fill" Spacing="0" Padding="0,5,0,10">
+                <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Fill" Spacing="0" Padding="30,0,30,0">
+                    <Label FontSize="12" FontAttributes="Bold" Text="{x:Static footyscorer:StringResource.CompetitionLabel}" TextColor="{x:Static local:ThemeSettings.DefaultComplementaryColor}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Fill" Spacing="0" Padding="17,0,20,0">
+                    <autocomplete:SfAutoComplete DropDownTextSize="12" WatermarkColor="{x:Static local:ThemeSettings.PlaceholderTextColor}" BorderColor="Transparent" AutoCompleteMode="Suggest" SuggestionMode="StartsWith" Text="{Binding CompetitionName, Mode=TwoWay}" TextSize="16" Watermark="{x:Static footyscorer:StringResource.SuggestionPlaceholder}" x:Name="CompetitionAutoComplete"  HorizontalOptions="Fill"></autocomplete:SfAutoComplete>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Fill" Spacing="0" Padding="30,0,29,0">
+                    <BoxView VerticalOptions="End" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="0.5" BackgroundColor="{x:Static local:ThemeSettings.DefaultComplementaryColor}" />
+                </StackLayout>
             </StackLayout>
             
             <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Fill" Spacing="4" Padding="30,0,30,10">
                 <Label FontSize="12" FontAttributes="Bold" Text="{x:Static footyscorer:StringResource.RoundLabel}" TextColor="{x:Static local:ThemeSettings.DefaultComplementaryColor}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"></Label>
-                <Entry Placeholder="{x:Static footyscorer:StringResource.RoundPlaceholder}" Keyboard="Numeric" FontSize="16" Text="{Binding Round, Mode=TwoWay}" HorizontalOptions="Fill"></Entry>
+                <Entry PlaceholderColor="{x:Static local:ThemeSettings.PlaceholderTextColor}" Placeholder="{x:Static footyscorer:StringResource.RoundPlaceholder}" Keyboard="Numeric" FontSize="16" Text="{Binding Round, Mode=TwoWay}" HorizontalOptions="Fill"></Entry>
                 <BoxView VerticalOptions="End" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="0.5" BackgroundColor="{x:Static local:ThemeSettings.DefaultComplementaryColor}" />
             </StackLayout>
 
@@ -80,7 +86,7 @@
                         <ColumnDefinition Width="10"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     
-                    <customControls:RoundedBoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" CornerRadius="5" Color="{x:Static local:ThemeSettings.DefaultComplementaryColor}" HasShadow="false"/>
+                    <customControls:RoundedBoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" CornerRadius="5" Color="{x:Static local:ThemeSettings.DefaultApplicationColor}" HasShadow="false"/>
                     <Label Grid.Row="0" Grid.Column="1" FontSize="14" FontAttributes="Bold" TextColor="White" Text="{x:Static footyscorer:StringResource.StartMatchButtonText}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
                     <iconize:IconLabel Grid.Row="0" Grid.Column="2" FontSize="18" TextColor="White" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Text="fa-angle-right" />
                 </Grid>

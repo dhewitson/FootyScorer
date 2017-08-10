@@ -80,6 +80,7 @@
     <Compile Include="UI\Match\NewMatch.xaml.cs">
       <DependentUpon>NewMatch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Controls\RecentViewCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UI\" />

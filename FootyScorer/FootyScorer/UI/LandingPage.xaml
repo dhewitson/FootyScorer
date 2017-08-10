@@ -10,60 +10,32 @@
     x:Class="FootyScorer.UI.LandingPage">
     
 	<ContentPage.Content>
-        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
-            <Grid Padding="10" RowSpacing="15" ColumnSpacing="15" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="60"></RowDefinition>
-                    <RowDefinition Height="150"></RowDefinition>
-                    <RowDefinition Height="40"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="40"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="150"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" Padding="0, 25,0,0">
 
-                <Label Text="{x:Static footyscorer:StringResource.IntroLabelText}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" TextColor="{x:Static local:ThemeSettings.DefaultButtonAsLinkColor}" FontSize="14" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-                
-                <customControls:RoundedBoxView Grid.Row="1" Grid.Column="1" CornerRadius="75" Color="{x:Static local:ThemeSettings.DefaultSplitComplementaryColor}" HasShadow="false" Stroke="{x:Static local:ThemeSettings.DefaultSplitComplementaryDarkColor}" StrokeThickness="2" />
-                <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Fill" Spacing="8" Padding="0">
+            <StackLayout Orientation="Vertical" VerticalOptions="Center" HeightRequest="180" HorizontalOptions="Fill" Spacing="25" Padding="15">
+                <Label Text="{x:Static footyscorer:StringResource.IntroLabelText}" TextColor="White" FontSize="14" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+
+                <StackLayout Orientation="Vertical" VerticalOptions="Center" HeightRequest="200" HorizontalOptions="Fill" Spacing="10" Padding="0">
                     <iconize:IconLabel FontSize="28" Text="fa-play" TextColor="{x:Static local:ThemeSettings.DefaultButtonTextColour}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
                     <Label Text="{x:Static footyscorer:StringResource.NewMatchButton}" TextColor="{x:Static local:ThemeSettings.DefaultButtonTextColour}" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-                    <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer x:Name="StartMatchTapped" />
-                        </StackLayout.GestureRecognizers>
                 </StackLayout>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="StartMatchTapped" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
 
-                <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Start" Spacing="2" Padding="0">
-                    <Label Text="{x:Static footyscorer:StringResource.RecentLabel}" FontAttributes="Bold" FontSize="16" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"></Label>
-                    <Label Text="{x:Static footyscorer:StringResource.MatchOnlyLabel}" TextColor="Black" FontSize="16" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"></Label>
+            <StackLayout BackgroundColor="White">
+                <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Start" Spacing="2" Padding="10,15,10,0">
+                    <Label Text="{x:Static footyscorer:StringResource.RecentLabel}" FontAttributes="Bold" FontSize="16" TextColor="{x:Static local:ThemeSettings.DefaultComplementaryDarkColor}" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"></Label>
+                    <Label Text="{x:Static footyscorer:StringResource.MatchOnlyLabel}" TextColor="{x:Static local:ThemeSettings.DefaultComplementaryDarkColor}" FontSize="16" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"></Label>
                 </StackLayout>
                
-                <BoxView VerticalOptions="End" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="0.5" BackgroundColor="Black" />
-                
-                <StackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Spacing="0" Padding="0">
-                    <Label Text="{x:Static footyscorer:StringResource.NoRecentLabel}" x:Name="NoPreviousMatchesLabel" FontSize="12" FontAttributes="Bold" />
-                    <Grid x:Name="MatchesGrid" Padding="0" RowSpacing="10" ColumnSpacing="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="100"></RowDefinition>
-                            <RowDefinition Height="100"></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                    </Grid>
+                <BoxView Margin="10,0,10,0" VerticalOptions="End" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="0.5" BackgroundColor="Black" />
+
+                <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Padding="10,0,10,0">
+                    <ListView x:Name="RecentListView" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" />
                 </StackLayout>
-                 <StackLayout x:Name="ViewMoreStack" Grid.Row="4" Grid.Column="2" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="End" Spacing="4" Padding="0">
-                    <Label Text="{x:Static footyscorer:StringResource.ViewMoreLabel}" Grid.Row="3" Grid.Column="2" TextColor="{x:Static local:ThemeSettings.DefaultButtonAsLinkColor}" FontSize="14" HorizontalOptions="End" VerticalTextAlignment="Center"></Label>
-                    <iconize:IconLabel FontSize="15" Text="fa-angle-right" TextColor="{x:Static local:ThemeSettings.DefaultButtonAsLinkColor}" VerticalTextAlignment="Center" />
-                    <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer x:Name="ViewMoreGesture" />
-                    </StackLayout.GestureRecognizers>
-                </StackLayout>
-            </Grid>
+            </StackLayout>
         </StackLayout>
 	</ContentPage.Content>
 </ui:FootyScorerContentPageBase>

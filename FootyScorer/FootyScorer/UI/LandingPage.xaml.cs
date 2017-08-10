@@ -18,33 +18,38 @@ namespace FootyScorer.UI
         public LandingPage()
         {
             InitializeComponent();
-            Title = StringResource.ApplicationName;
-            BackgroundColor = ThemeSettings.DefaultBackgroundColour;
+            //Title = StringResource.ApplicationName;
+            BackgroundColor = ThemeSettings.DefaultApplicationColor;
 
-            NavigationPage.SetHasNavigationBar(this, true);
+            NavigationPage.SetHasNavigationBar(this, false);
             //NavigationPage.SetTitleIcon(this, "");
             NavigationPage.SetBackButtonTitle(this, StringResource.BackLabel);
+
+            RecentListView.ItemTapped += HandleItemSelected;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-			_newMatch?.Dispose();
-			_viewMoreListPage?.Dispose();
-			_viewMoreListPage = null;
-			_newMatch = null;
+            _newMatch?.Dispose();
+            _viewMoreListPage?.Dispose();
+            _viewMoreListPage = null;
+            _newMatch = null;
 
-            _matches = App.DataManager.GetMatches((m) => true).OrderByDescending(m => m.Date).Take(4).ToList();
-            BuildGrid();
-            ViewMoreGesture.Tapped += ViewMoreTapped;
+			_matches = App.DataManager.GetMatches((m) => true).OrderByDescending(m => m.Date).Take(4).ToList();
+
+
+			RecentListView.ItemTemplate = new DataTemplate(() => new RecentViewCell());
+            RecentListView.ItemsSource = _matches;
+            RecentListView.RowHeight = 60;
+
             StartMatchTapped.Tapped += StartMatchButtonTapped;
-		 }
+        }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            ViewMoreGesture.Tapped -= ViewMoreTapped;
             StartMatchTapped.Tapped -= StartMatchButtonTapped;
         }
 
@@ -66,95 +71,12 @@ namespace FootyScorer.UI
             await Navigation.PushAsync(_newMatch, true);
         }
 
-        private void BuildGrid()
-        {
-            MatchesGrid.Children?.Clear();
+		private void HandleItemSelected(object sender, ItemTappedEventArgs e)
+		{
+			var match = e.Item as MatchViewModel;
+			if (match == null) return;
 
-            int row = 0;
-            int column = 0;
-            int index = 0;
-
-            NoPreviousMatchesLabel.IsVisible = _matches == null || !_matches.Any();
-            ViewMoreStack.IsVisible = !NoPreviousMatchesLabel.IsVisible;
-
-            if (_matches == null) return;
-
-            foreach (var m in _matches)
-            {
-				var boxView = new RoundedBoxView
-				{
-					CornerRadius = 45,
-					Color = Color.White,
-					Stroke = ThemeSettings.DefaultSplitComplementaryColor,
-					StrokeThickness = 2
-				};
-				var stack = new StackLayout
-				{
-					Orientation = StackOrientation.Vertical,
-					VerticalOptions = LayoutOptions.Center,
-					HorizontalOptions = LayoutOptions.Fill,
-					Spacing = 5,
-					Padding = 0,
-					Children =
-				    {
-						new Label
-						{
-							FontSize = 12,
-							Text = m.Round,
-							FontAttributes = FontAttributes.Bold,
-							TextColor = Color.Black,
-							HorizontalOptions = LayoutOptions.Center,
-							HorizontalTextAlignment = TextAlignment.Center,
-							VerticalTextAlignment = TextAlignment.Center
-						},
-						new Label
-						{
-							FontSize = 10,
-							Text = m.VersingTeams,
-							TextColor = Color.Black,
-							HorizontalOptions = LayoutOptions.Center,
-							HorizontalTextAlignment = TextAlignment.Center,
-							VerticalTextAlignment = TextAlignment.Center
-						},
-						new Label
-						{
-							FontSize = 12,
-                            Text = $"{m.HomeTeamTotalShort} to {m.AwayTeamTotalShort}",
-							FontAttributes = FontAttributes.Bold,
-							TextColor = Color.Black,
-							HorizontalOptions = LayoutOptions.Center,
-							HorizontalTextAlignment = TextAlignment.Center,
-							VerticalTextAlignment = TextAlignment.Center
-						},
-						new Label
-						{
-							FontSize = 10,
-							Text = m.DateText,
-							TextColor = Color.Black,
-							HorizontalOptions = LayoutOptions.Center,
-							HorizontalTextAlignment = TextAlignment.Center,
-							VerticalTextAlignment = TextAlignment.Center
-						}
-					},
-					GestureRecognizers =
-					{
-						new TapGestureRecognizer { Command = new Command(HandleGameTapped), CommandParameter = index}
-					}
-				};
-
-                MatchesGrid.Children.Add(boxView, column, row);
-                MatchesGrid.Children.Add(stack, column, row);
-
-                index++;
-
-                if (column == 1)
-                {
-                    row++;
-                    column = 0;
-                }
-                else
-                    column++;
-            }
+			Device.BeginInvokeOnMainThread(async () => { await Navigation.PushAsync(new MatchHistory(match.Id), true); });
 		}
 
         #region IDisposable Support

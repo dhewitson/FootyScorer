@@ -6,11 +6,12 @@
 	<ContentPage.Content>
         <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Fill" Spacing="7" Padding="5,10,5,10">
             <Label FontSize="16" FontAttributes="Bold" Text="{Binding Round, Mode=OneWay}" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-            <Label FontSize="16" Text="{Binding CompetitionName, Mode=OneWay}" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-            <Label FontSize="16" Text="{Binding VersingTeams, Mode=OneWay}" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-            <Label FontSize="16" Text="{Binding LongDateText, Mode=OneWay}" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+            <Label FontSize="12" Text="{Binding LongDateText, Mode=OneWay}" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+            <BoxView Margin="0,0,0,0" VerticalOptions="End" HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="Transparent" />
+            <Label FontSize="16" FontAttributes="Bold" Text="{Binding VersingTeams, Mode=OneWay}" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+            <Label FontSize="12" Text="{Binding CompetitionName, Mode=OneWay}" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
 
-            <BoxView Margin="0,30,0,0" VerticalOptions="End" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="0.5" BackgroundColor="{x:Static local:ThemeSettings.DefaultApplicationColor}" />
+            <BoxView Margin="0,30,0,0" VerticalOptions="End" HorizontalOptions="FillAndExpand" HeightRequest="0.5" BackgroundColor="{x:Static local:ThemeSettings.DefaultApplicationColor}" />
             
             <Grid Padding="10" RowSpacing="8" ColumnSpacing="5" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
                 <Grid.RowDefinitions>

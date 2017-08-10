@@ -7,8 +7,6 @@ namespace FootyScorer.UI.Controls
     {
         public MatchCell()
         {
-            Height = 65;
-
             var roundLabel = new Label
             {
                 HorizontalTextAlignment = TextAlignment.Center,
@@ -31,7 +29,7 @@ namespace FootyScorer.UI.Controls
             var roundStack = new StackLayout
             {
                 Spacing = 0,
-                Padding = 10,
+                Padding = 0,
                 Orientation = StackOrientation.Vertical,
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,

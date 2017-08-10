@@ -105,11 +105,18 @@ namespace FootyScorer.ViewModel
         /// <value>The date.</value>
         public DateTime Date { get; set; }
 
-        /// <summary>
-        /// Gets the date as text.
-        /// </summary>
-        /// <value>The date text.</value>
-        public string DateText => Date.ToString("ddd, dd MMM yyyy");
+		/// <summary>
+		/// Gets the date as text.
+		/// </summary>
+		/// <value>The date text.</value>
+		public string ShortDateText => Date.ToString(", d MMM yyyy");
+
+
+		/// <summary>
+		/// Gets the date as text.
+		/// </summary>
+		/// <value>The date text.</value>
+		public string DateText => Date.ToString("ddd, dd MMM yyyy");
 
         /// <summary>
         /// Gets the long date text.
