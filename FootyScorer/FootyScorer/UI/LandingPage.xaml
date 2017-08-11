@@ -15,8 +15,8 @@
             <StackLayout Orientation="Vertical" VerticalOptions="Center" HeightRequest="180" HorizontalOptions="Fill" Spacing="25" Padding="15">
                 <Label Text="{x:Static footyscorer:StringResource.IntroLabelText}" TextColor="White" FontSize="14" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
 
-                <StackLayout Orientation="Vertical" VerticalOptions="Center" HeightRequest="200" HorizontalOptions="Fill" Spacing="10" Padding="0">
-                    <iconize:IconLabel FontSize="28" Text="fa-play" TextColor="{x:Static local:ThemeSettings.DefaultButtonTextColour}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                <StackLayout Orientation="Vertical" VerticalOptions="Center" HeightRequest="200" HorizontalOptions="Fill" Spacing="10" Padding="0,15,0,0">
+                    <iconize:IconLabel FontSize="32" Text="fa-play" TextColor="{x:Static local:ThemeSettings.DefaultButtonTextColour}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
                     <Label Text="{x:Static footyscorer:StringResource.NewMatchButton}" TextColor="{x:Static local:ThemeSettings.DefaultButtonTextColour}" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
                 </StackLayout>
                 <StackLayout.GestureRecognizers>

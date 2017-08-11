@@ -25,37 +25,33 @@ namespace FootyScorer.UI.Match
 
             _model = model;
             _model.CompetitionName = _model.CompetitionName ?? "";
+            _model.HomeTeam = _model.HomeTeam ?? "";
+            _model.AwayTeam = _model.AwayTeam ?? "";
+            _model.HomeTeamShort = _model.HomeTeamShort ?? "";
+            _model.AwayTeamShort = _model.AwayTeamShort ?? "";
             BindingContext = _model;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            HomeShort.TextChanged += ShortTextFieldChanged;
-            AwayShort.TextChanged += ShortTextFieldChanged;
             _teams = App.DataManager.GetTeams(t => true);
             CompetitionAutoComplete.DataSource = _teams.Select(t => t.CompetitionName).Distinct().ToList();
+            HomeTeamAutoComplete.DataSource = _teams.Select(t => t.Name).Distinct().ToList();
+            AwayTeamAutoComplete.DataSource = _teams.Select(t => t.Name).Distinct().ToList();
+			HomeTeamShortAutoComplete.DataSource = _teams.Select(t => t.ShortName).Distinct().ToList();
+			AwayTeamShortAutoComplete.DataSource = _teams.Select(t => t.ShortName).Distinct().ToList();
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            HomeShort.TextChanged -= ShortTextFieldChanged;
-            AwayShort.TextChanged -= ShortTextFieldChanged;
         }
 
         private bool Validated()
         {
             // TODO: Validate data.
             return false;
-        }
-
-        private void ShortTextFieldChanged(object sender, EventArgs e)
-        {
-            var editor = (Entry)sender;
-
-            if (editor.Text.Length > 3)
-                editor.Text = editor.Text.Substring(0, 3);
         }
 
         #region IDisposable Support
